@@ -1,3 +1,16 @@
+/*===============================================
+To compile, fist run flex:
+	flex scanner.l
+This will generate lex.yy.c
+(scanner.l will be this file you're reading now)
+
+Then compile the newly generated c file:
+	<compiler> lex.yy.c -lfl -o scanner.out
+"-lfl" will link the appropriate libraries.
+
+scanner.out will be the compiled binary.
+===============================================*/
+
 %{
 
 // declarations and inclusions
