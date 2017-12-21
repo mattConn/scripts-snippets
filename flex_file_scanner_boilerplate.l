@@ -10,8 +10,9 @@ Then compile the newly generated c file:
 
 scanner.out will be the compiled binary.
 ===============================================*/
-
+%option noyywrap
 %{
+// %option noyywrap: when compiling, eliminates need for -lfl flag
 
 // declarations and inclusions
 // inserted directly into generated c file 
