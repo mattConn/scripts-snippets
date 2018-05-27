@@ -5,8 +5,7 @@ This will generate lex.yy.c
 (scanner.l will be this file you're reading now)
 
 Then compile the newly generated c file:
-	<compiler> lex.yy.c -lfl -o scanner.out
-"-lfl" will link the appropriate libraries.
+	<compiler> lex.yy.c -o scanner.out
 
 scanner.out will be the compiled binary.
 ===============================================*/
