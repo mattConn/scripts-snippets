@@ -1,0 +1,38 @@
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #24292e;
+        }
+
+        nav ul {
+            padding-left: 0;
+        }
+
+        .nav li {
+            display: inline-block;
+            margin-right: 1em;
+            font-size: 14px;
+        }
+
+
+        #md-content {
+            color: #24292e;
+        }
+
+        #md-content p {
+            margin-bottom: 16px;
+            line-height: 24px;
+        }
+
+        p {
+            font-size: 15px;
+            font-family: sans-serif;
+            color: #24292e;
+        }
+
+        @media (max-width: 500px) {
+            nav li {
+                display: block;
+            }
+        }
+

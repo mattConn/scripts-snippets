@@ -1,0 +1,60 @@
+{% extends 'layout.twig' %}
+{% block title %}GitList{% endblock %}
+
+{% block body %}
+{% include 'navigation.twig' %}
+
+<div class="container" id="repositories">
+
+	<div class="repository" style="margin-bottom: 18px;">
+		<div class="repository-header">
+			<i class="icon-info-sign icon-spaced"></i> <span>About</span>
+		</div>
+		<div class="repository-body" style="padding: 8px;">
+			<p>GitHub mirror for these repositories <a href="https://github.com/mattconn">here</a>.</p>
+			<p>Git web interface powered by <a href="http://gitlist.org/">GitList</a>. Source for my theme modifications <a href="/gitlist-themes.git/">here</a>.</p>
+		</div>
+	</div>
+
+<!-- pinned repos -->
+<!--
+	<div class="repository" style="margin-bottom: 18px; border-bottom: none;">
+		<div class="repository-header">
+			<i class="icon-star icon-spaced"></i> <span>Pinned Repositories</span>
+		</div>
+
+          <div class="repository-header">
+                <i class="icon-folder-open icon-spaced"></i> <a href="/include-file.git/"><span class="name">include-file.git</span></a>
+            </div>
+	</div>
+-->
+<!-- end pinned repos -->
+
+    <div class="search">
+		<p>Find a repository:</p>
+        <input class="search" placeholder="search" autofocus>
+    </div>
+
+    <div class="list">
+        {% for repository in repositories %}
+        <div class="repository">
+            <div class="repository-header">
+                <i class="icon-folder-open icon-spaced"></i> <a href="{{ path('repository', {repo: repository.name}) }}"><span class="name">{{ repository.name }}</span></a>
+                <a href="{{ path('rss', {repo: repository.name, branch: 'master'}) }}"><i class="rss pull-right"></i></a>
+            </div>
+            <div class="repository-body">
+                {% if repository.description %}
+                <p>{{ repository.description }}</p>
+                {% else %}
+                <p>There is no repository description file. Please, create one to remove this message.</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <hr />
+
+    {% include 'footer.twig' %}
+</div>
+{% endblock %}
