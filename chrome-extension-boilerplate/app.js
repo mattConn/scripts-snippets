@@ -1,0 +1,1 @@
+alert('chrome-extension-boilerplate: app.js executed.');
