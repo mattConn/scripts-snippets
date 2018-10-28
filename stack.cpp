@@ -84,5 +84,6 @@ void Stack<T>::resize(const int &newSize)
 template <class T>
 T Stack<T>::operator[](const int &i)
 {
+	assert(i < size && i > -1);
 	return arr[i];
 }
