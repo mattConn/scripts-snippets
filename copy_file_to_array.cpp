@@ -9,9 +9,9 @@ void copyFile(ifstream &file, student list[])
     }
     double tmp;
     int i = 0;
-    while (!file.eof())
-    {
-        file >> list[i].id >> list[i].quiz1 >> list[i].quiz2 >> list[i].midterm >> list[i].final;
+    // while (!file.eof()) will copy last line twice; the following is better
+    while (file >> list[i].id >> list[i].quiz1 >> list[i].quiz2 >> list[i].midterm >> list[i].final;)
+	{
         i++;
-    }
+	}
 }
