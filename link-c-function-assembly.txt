@@ -1,0 +1,10 @@
+# C function declared as extern in c program and in asm
+
+# assemble
+nasm -f elf32 test.s
+
+# compile C prog, -c flag means don't run linker, m32 means emulate 32 bit architecture.
+gcc -c -m32 kmain.c -o kmain.o
+
+# link
+ld -m i_386 test.o kmain.o -o prog
